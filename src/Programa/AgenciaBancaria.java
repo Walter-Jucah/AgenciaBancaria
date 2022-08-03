@@ -26,42 +26,62 @@ public class AgenciaBancaria {
         System.out.println("|   Opção 4 - Transferir    |");
         System.out.println("|   Opção 5 - Listar        |");
         System.out.println("|   Opção 6 - Sair          |");
+
+        int operacao = input.nextInt();
+
+        switch (operacao) {
+
+            case 1:
+                criarConta();
+                break;
+
+            case 2:
+                depositar();
+                break;
+
+            case 3:
+                sacar();
+                break;
+
+            case 4:
+                transferir();
+                break;
+
+            case 5:
+                listar();
+                break;
+
+            case 6:
+                System.out.println("Obrigado por usar nossa agencia");
+                System.exit(0);
+
+            default:
+                System.out.println("Opcao invalida");
+                operacoes();
+                break;
+
+        }
+
     }
 
-    int operacao = input.nextInt();
+    public static void criarConta() {
 
-    switch(operacao)
-    {
-        
-        case 1:
-        criarConta();
-        break;
+        System.out.println("\nNome: ");
+        String nome = input.next();
 
-        case 2:
-        depositar();
-        break;
+        System.out.println("\nCPF: ");
+        String cpf = input.next();
 
-        case 3:
-        sacar();
-        break;
+        System.out.println("\nEmail: ");
+        String email = input.next();
 
-        case 4:
-        transferir();
-        break;
+        Pessoa pessoa = new Pessoa(nome, cpf, email);
 
-        case 5:
-        listar();
-        break;
+        Conta conta = new Conta(pessoa);
 
-        case 6:
-        System.out.println("Obrigado por usar nossa agencia.");
-        System.exit(0);
+        contasBancarias.add(conta);
+        System.out.println("Conta criada com sucesso!");
 
-        default:
-        System.out.println("Opcao invalida");
         operacoes();
-        break;
-
     }
-
 }
