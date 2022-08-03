@@ -152,6 +152,8 @@ public class AgenciaBancaria {
                 Double valor = input.nextDouble();
 
                 contaRemetente.transferir(contaDestinatario, valor);
+                System.out.println("Valor transferido com sucesso");
+
             }
         }
 
