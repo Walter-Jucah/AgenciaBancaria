@@ -12,7 +12,7 @@ public class Pessoa {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-        counter++;
+        counter = counter + 1;
     }
 
     public String getNome() {
